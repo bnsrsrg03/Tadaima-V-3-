@@ -9,7 +9,6 @@ return new class extends Migration {
     {
         Schema::create('ulasans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menu_id')->constrained('menus')->onDelete('cascade'); // Foreign key untuk menu
             $table->text('comment'); // Komentar ulasan
             $table->timestamps();
             $table->softDeletes();
