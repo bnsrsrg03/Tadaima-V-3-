@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\MenuResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\MenuResource\RelationManagers;
+use Illuminate\Support\Facades\Storage;
+
 
 class MenuResource extends Resource
 {
@@ -69,7 +71,9 @@ class MenuResource extends Resource
     {
         return $table
         ->columns([
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                ->url(fn($record) => Storage::url($record->image)), // Menggunakan Storage::url() untuk URL gambar
+
 
                 Tables\Columns\TextColumn::make('name')
                 ->searchable()
