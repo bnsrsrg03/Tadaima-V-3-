@@ -18,6 +18,7 @@
                 <img src="{{ asset('assets/images/logo.jpg') }}" alt="Logo Tadaima">
             </div>
 </div>
+</div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="{{ route('home') }}">Beranda</a></li>
@@ -30,10 +31,10 @@
                             <li><a href="{{ route('menu.cemilan') }}">Cemilan</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ route('review.index') }}">Ulasan</a></li>
+                    <li><a href="{{ route('ulasan.index') }}">Ulasan</a></li>
                 </ul>
             </nav>
-        </div>
+ 
         <div class="nav-profile">
             <a href="{{ url('/admin/login') }}">
                 <i class="fa-regular fa-user"></i>
@@ -65,7 +66,7 @@
             <a href="{{ route('home') }}">Beranda</a><br>
             <a href="{{ route('halaman.tentang') }}">Tentang Kami</a><br>
             <a href="{{ route('menu.makanan') }}">Menu</a><br>
-            <a href="{{ route('review.index') }}">Ulasan</a>
+            <a href="{{ route('ulasan.index') }}">Ulasan</a>
         </div>
 
         <div class="footer-sosmed">

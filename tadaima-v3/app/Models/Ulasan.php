@@ -11,9 +11,6 @@ class Ulasan extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'comment']; // Kolom yang bisa diisi
+    protected $fillable = [ 'comment']; // Kolom yang bisa diisi
 
-    public function menu() {
-        return $this->belongsTo(Menu::class);
-    }
 }
