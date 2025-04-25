@@ -149,7 +149,7 @@
             @foreach ($galeris as $galeri)
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="{{ asset('assets/image/galeri/' . $galeri->image) }}" class="card-img-top" alt="Galeri">
+                        <img src="{{ asset('storage/' . $galeri->image) }}" class="card-img-top" alt="Galeri">
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ $galeri->judul }}</h5>
                         </div>
