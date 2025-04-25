@@ -9,10 +9,12 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\GaleriResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\GaleriResource\RelationManagers;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriResource extends Resource
 {
@@ -29,6 +31,12 @@ class GaleriResource extends Resource
                 TextInput::make('id')
                     ->required()
                     ->label('Id'),
+
+                    FileUpload::make('image')
+                    ->image() // ini penting agar hanya gambar
+                    ->directory('galeri-images') // folder penyimpanan di storage/app/public/menu-images
+                    ->required()
+                    ->label('Gambar'),
             ]);
     }
 
@@ -36,7 +44,11 @@ class GaleriResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('image')
+                ->url(fn($record) => Storage::url($record->image)),
+
+
+
             ])
             ->filters([
                 //
