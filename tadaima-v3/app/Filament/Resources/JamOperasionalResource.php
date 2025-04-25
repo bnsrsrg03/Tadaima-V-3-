@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use App\Models\JamOperasional;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TimePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\JamOperasionalResource\Pages;
@@ -34,18 +35,37 @@ class JamOperasionalResource extends Resource
                             'kamis' => 'Kamis',
                             'jumat' => 'Jumat',
                             'sabtu' => 'Sabtu',
-                            'minggu' => 'Minggu',
-                            
-    ])
+                            'minggu' => 'Minggu',                       
+                        ])
+                        ->required(),
 
-            ]);
+                        TimePicker::make('open_time')
+                        ->label('Jam Buka')
+                        ->required(),
+        
+                        TimePicker::make('close_time')
+                        ->label('Jam Tutup')
+                        ->required(),
+                ]);
+
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('day')
+                ->label('Hari')
+                ->sortable()
+                ->searchable(),
+
+                Tables\Columns\TextColumn::make('open_time')
+                 ->label('Jam Buka')
+                 ->time('H:i'),
+
+                Tables\Columns\TextColumn::make('close_time')
+                ->label('Jam Tutup')
+                ->time('H:i'),
             ])
             ->filters([
                 //
