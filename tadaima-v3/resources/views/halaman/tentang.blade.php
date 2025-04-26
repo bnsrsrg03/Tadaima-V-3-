@@ -99,23 +99,29 @@
 </style>
 
 <!-- Sejarah Rumah Makan -->
-<section class="tentang-kami">
-    <div class="container">
-        <h2>Sejarah Singkat Berdirinya Rumah Makan Tadaima</h2>
-        <p>
+<section class="relative bg-cover bg-center bg-no-repeat text-white py-24 px-6 md:px-20" 
+        
+         data-aos="fade-up" data-aos-duration="1000">
+    <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Sejarah Singkat Berdirinya Rumah Makan Tadaima
+        </h2>
+        <p class="text-white leading-relaxed mb-4">
             Tadaima Ramen and Coffee merupakan salah satu rumah makan khas Jepang yang terletak di Jl. Gereja 3C, Balige, Sumatera Utara, Indonesia.
             Berdiri sejak tahun 2023, rumah makan ini menawarkan berbagai jenis ramen autentik dan kopi spesial yang menggugah selera.
         </p>
-        <p>
+        <p class="text-white leading-relaxed mb-4">
             Dengan konsep interior yang mengusung budaya Jepang, Tadaima Ramen and Coffee menciptakan suasana yang nyaman dan cocok untuk berkumpul bersama keluarga maupun teman-teman.
             Selain itu, berbagai pilihan menu lainnya seperti rice bowl dan makanan ringan khas Jepang juga tersedia untuk melengkapi pengalaman kuliner pelanggan.
         </p>
-        <p>
+        <p class="text-white leading-relaxed">
             Kami berkomitmen untuk selalu memberikan pelayanan terbaik dan menghadirkan hidangan berkualitas dengan cita rasa yang autentik.
             Nikmati pengalaman bersantap yang berbeda di Tadaima Ramen and Coffee!
         </p>
     </div>
 </section>
+
 
 <!-- Profil Karyawan -->
 <section class="tim-kami py-5 bg-light">

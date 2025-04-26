@@ -19,3 +19,4 @@ class TentangController extends Controller
         return view('halaman.tentang', compact('galeris', 'karyawans', 'jamOperasional'));
     }
 }
+
