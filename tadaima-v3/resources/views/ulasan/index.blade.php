@@ -161,7 +161,6 @@
     </div>
 </div>
 
-<a href="https://wa.me/6281396537191" target="_blank" class="whatsapp-button">
-    Hubungi kami
-</a>
+@include('components.whatsapp-button')
+
 @endsection

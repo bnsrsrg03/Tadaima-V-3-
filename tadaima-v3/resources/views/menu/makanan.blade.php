@@ -28,6 +28,7 @@
         {{ $menus->links('pagination::bootstrap-5') }}
     </div>
 </div>
+@include('components.whatsapp-button')
 @endsection
 
 @section('styles')
@@ -42,6 +43,8 @@
     }
 </style>
 
+
+
 @endsection
 
 @section('scripts')
@@ -53,7 +56,5 @@
     });
 </script>
 
-<a href="https://wa.me/6281396537191" target="_blank" class="whatsapp-button">
-    Hubungi kami
-</a>
+
 @endsection

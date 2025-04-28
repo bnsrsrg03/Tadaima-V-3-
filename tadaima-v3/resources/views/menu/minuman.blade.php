@@ -22,6 +22,9 @@
         {{ $menus->links('pagination::bootstrap-5') }}
     </div>
 </div>
+
+@include('components.whatsapp-button')
+
 @endsection
 
 @section('styles')
@@ -39,6 +42,7 @@
 
 </style>
 
+
 @endsection
 
 @section('scripts')
@@ -49,4 +53,6 @@
         once: true
     });
 </script>
+
+
 @endsection
