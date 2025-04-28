@@ -14,10 +14,7 @@ use Filament\Forms\Components\Checkbox;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\MenuResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\MenuResource\RelationManagers;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -60,8 +57,6 @@ class MenuResource extends Resource
                             ->label('Apakah Bestseller?')
                             ->default(false),
                         
-                        
-                        
                     ])
                     ->columns(2),
             ]);
@@ -74,7 +69,6 @@ class MenuResource extends Resource
                 Tables\Columns\ImageColumn::make('image')
                 ->url(fn($record) => Storage::url($record->image)), // Menggunakan Storage::url() untuk URL gambar
 
-
                 Tables\Columns\TextColumn::make('name')
                 ->searchable()
                 ->sortable(),
@@ -84,18 +78,13 @@ class MenuResource extends Resource
                  ->sortable()
                  ->searchable(),
 
-
                 Tables\Columns\TextColumn::make('price')
                 ->sortable(),
                 
-
                 Tables\Columns\IconColumn::make('bestseller')
                  ->label('Bestseller')
                  ->boolean(),
                  
-             
-
-
             ])
             ->filters([
                 //

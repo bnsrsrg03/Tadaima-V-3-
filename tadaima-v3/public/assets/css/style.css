@@ -384,6 +384,12 @@ i, svg {
     background-color: #1ebe5d;
 }
 
+.whatsapp-button i {
+    font-size: 25px; /* Ukuran icon */
+    margin-right: 2px; /* Jarak icon ke teks */
+    vertical-align: middle; /* Biar icon sejajar dengan teks */
+}
+
 
 /* Section */
 .tim-kami {
