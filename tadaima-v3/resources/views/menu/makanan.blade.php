@@ -1,67 +1,59 @@
-@extends('layouts.app') {{-- Pastikan kamu punya layouts.app --}}
+@extends('layouts.app')
 
 @section('content')
-<div class="container py-4">
-    <h2 class="text-center mb-4">Makanan</h2>
+<div class="container py-5">
+    <h2 class="text-center mb-5" style="font-size: 2.8rem; font-weight: bold;">Makanan</h2>
+
     <div class="row justify-content-center">
-        @foreach ($menus as $menu)
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="position-relative">
-                        <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
-                        @if($menu->bestseller)
-                            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">BEST SELLER</span>
-                        @endif
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ $menu->name }}</h5>
-                        <p class="card-text text-danger fw-bold">Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
-                    </div>
-                </div>
+    @foreach ($menus as $menu)
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-5" data-aos="fade-up">
+        <div class="card h-100 shadow-lg position-relative" style="border-radius: 20px; overflow: hidden;">
+            {{-- Kalau bestseller, tampilkan label best seller --}}
+            @if ($menu->bestseller)
+                <img src="{{ asset('assets/images/bestseller.png') }}" alt="Best Seller" class="best-seller-badge">
+            @endif
+
+            <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->name }}" class="card-img-top" style="height: 300px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+            <div class="card-body text-center d-flex flex-column">
+                <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
+                <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
             </div>
-        @endforeach
+        </div>
+    </div>
+@endforeach
+
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        {{ $menus->links('pagination::bootstrap-5') }}
     </div>
 </div>
-
-@section('styles')
-    <style>
-        .card {
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-img-top {
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            padding: 0.5em 0.75em;
-            border-radius: 12px;
-            font-weight: bold;
-        }
-
-        .card-body h5 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-text {
-            font-size: 1.1rem;
-        }
-
-        .container h2 {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-    </style>
 @endsection
 
+@section('styles')
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 28px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+@endsection
+
+@section('scripts')
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+
+<a href="https://wa.me/6281396537191" target="_blank" class="whatsapp-button">
+    Hubungi kami
+</a>
 @endsection

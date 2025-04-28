@@ -1,16 +1,16 @@
-/* === Global Styles === */
 body {
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 1440px;
+    margin: 0 auto; 
+    padding: 20px;
 }
+
 
 /* === Header === */
 header {
@@ -46,9 +46,8 @@ header {
 .logo img {
     height: 56px;
     width: 56px;
-    object-fit: cover; /* supaya gambarnya tetap proporsional */
-    border-radius: 50%; /* kalau mau logonya bulat seperti ellipse */
-}
+    object-fit: cover;
+    border-radius: 50%;}
 
 .navbar-right {
     display: flex;
@@ -70,7 +69,7 @@ header {
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-weight: 400; /* Inter Regular */
+    font-weight: 400; 
     font-size: 18px;
     padding: 8px 12px;
     transition: background 0.3s;
@@ -104,7 +103,7 @@ header {
     padding: 10px;
     color: white;
     font-family: 'Inter', sans-serif;
-    font-weight: 400; /* Regular */
+    font-weight: 400; 
     font-size: 18px;
 }
 
@@ -206,7 +205,7 @@ header {
 
 .brand-title {
     font-family: 'Shikamaru', sans-serif;
-    font-size: 110px; /* Sesuai ukuran yang kamu mau */
+    font-size: 110px; 
     color: white;
 }
 
@@ -268,43 +267,58 @@ header {
 
 /* === Footer === */
 footer {
-    background-color: #a51717;
+    background-color: #AA1D1D;
     color: white;
-    padding: 40px 20px 20px;
-    font-size: 14px;
+    font-family: Arial, sans-serif;
 }
 
 .footer-container {
+    width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-    gap: 20px;
+    align-items: flex-start;
+    padding: 40px 0;
 }
 
 .footer-logo img {
     width: 198px;
     height: 185px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius:50%;
 }
 
-.footer-info, .footer-links, .footer-sosmed {
-    max-width: 300px;
-    padding: 10px; /* Menambahkan padding untuk elemen footer */
+.footer-info, .footer-contact, .footer-sosmed {
+    width: 300px; 
 }
 
-.footer-info a, .footer-sosmed a {
+.footer-info h4,
+.footer-contact h4,
+.footer-sosmed h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-info p,
+.footer-contact p,
+.footer-sosmed p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-contact a,
+.footer-sosmed a {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
-    color: #eee;
     font-size: 13px;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ffffff;
 }
 
 /* Responsive */
@@ -320,3 +334,119 @@ footer {
     }
 }
 
+i, svg {
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+}
+
+.navbar i, .footer-sosmed i {
+    font-size: 20px;
+}
+
+.nav-profile i {
+    font-size: 22px;
+}
+
+.pagination i, .pagination svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+.best-seller-badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 80px;
+    transform: rotate(-20deg);
+    z-index: 10;
+
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+    z-index: 9999; 
+    font-size: 14px; 
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebe5d;
+}
+
+
+/* Section */
+.tim-kami {
+    background-color: #f2f2f2;  /* abu-abu terang */
+    padding: 4rem 0;
+  }
+  .tim-kami .container h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Grid responsif: 
+     - di desktop 5 kolom, 
+     - di tablet 3 kolom, 
+     - di HP 1 kolom */
+  .tim-kami .row {
+    --bs-gutter-x: 1.5rem;
+  }
+  @media (min-width: 1200px) {
+    .tim-kami .col-karyawan { flex: 0 0 20%; max-width: 20%; }
+  }
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    .tim-kami .col-karyawan { flex: 0 0 33.3333%; max-width: 33.3333%; }
+  }
+  @media (max-width: 767.98px) {
+    .tim-kami .col-karyawan { flex: 0 0 100%; max-width: 100%; }
+  }
+  
+  /* Kartu */
+  .tim-kami .card {
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .tim-kami .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Gambar */
+  .tim-kami .card-img-top {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+  
+  /* Body & teks */
+  .tim-kami .card-body {
+    padding: 1rem;
+    background-color: #fff;
+  }
+  .tim-kami .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #333;
+  }
+  .tim-kami .card-text {
+    font-size: 0.85rem;
+    color: #777;
+    text-transform: capitalize;
+  }
+  

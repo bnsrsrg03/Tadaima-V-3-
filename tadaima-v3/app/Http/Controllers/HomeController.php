@@ -25,6 +25,5 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('home', compact('menus')); // ganti dengan nama view kamu
-    }
+        return view('home', compact('menus')); }
 }

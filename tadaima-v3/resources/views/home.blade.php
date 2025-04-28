@@ -31,9 +31,9 @@
     </div>
 </section>
 
-
-    {{-- Menu Terlaris Section --}}
-   
+<a href="https://wa.me/6281396537191" target="_blank" class="whatsapp-button bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition">
+    Hubungi kami
+</a>
 
 </main>
 @endsection

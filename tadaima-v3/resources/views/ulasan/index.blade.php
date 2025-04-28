@@ -50,7 +50,7 @@
     }
 
     .btn-submit::after {
-        content: "\27A4"; /* panah */
+        content: "\27A4"; 
     }
 
     .alert-success {
@@ -161,7 +161,7 @@
     </div>
 </div>
 
-<a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-button">
+<a href="https://wa.me/6281396537191" target="_blank" class="whatsapp-button">
     Hubungi kami
 </a>
 @endsection

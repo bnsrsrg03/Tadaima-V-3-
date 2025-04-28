@@ -63,34 +63,25 @@
         </div>
 
         <div class="footer-info">
-            <p><strong>Lokasi</strong></p>
+            <h4>Lokasi</h4>
             <p>Jln Gereja No 3 C,<br>Balige, Sumatera Utara,<br>Indonesia</p>
         </div>
 
-        <div class="footer-links">
-            <p><strong>Menu</strong></p>
-            <a href="{{ route('home') }}">Beranda</a><br>
-            <a href="{{ route('halaman.tentang') }}">Tentang Kami</a><br>
-            <a href="{{ route('menu.makanan') }}">Menu</a><br>
-            <a href="{{ route('ulasan.index') }}">Ulasan</a>
+        <div class="footer-contact">
+            <h4>Kontak</h4>
+            <p><i class="fas fa-phone"></i> +82 10-3925-6499</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:tadaimaramencoffee@gmail.com">tadaimaramencoffee@gmail.com</a></p>
         </div>
 
         <div class="footer-sosmed">
-            <p><strong>Sosial Media</strong></p>
-            <a href="https://www.instagram.com/tadaimaramen" target="_blank">
-                <i class="fab fa-instagram"></i> tadaimaramen
-            </a><br>
-            <a href="https://www.tiktok.com/@tadaimaramen" target="_blank">
-                <i class="fab fa-tiktok"></i> tadaimaramen
-            </a>
-            <p><strong>Kontak</strong></p>
-            <p><i class="fab fa-whatsapp"></i> +82 10-3925-6499</p>
-            <p><i class="far fa-envelope"></i> <a href="mailto:tadaimaramencoffee@gmail.com">tadaimaramencoffee@gmail.com</a></p>
+            <h4>Sosial Media</h4>
+            <p><i class="fab fa-instagram"></i> tadaimaramen</p>
+            <p><i class="fab fa-tiktok"></i> tadaimaramen</p>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2025 Tadaima Ramen and Coffee. All rights reserved.</p>
+        <p>&copy; 2025 Tadaima Ramen and Coffee. All rights reserved</p>
     </div>
 </footer>
 
