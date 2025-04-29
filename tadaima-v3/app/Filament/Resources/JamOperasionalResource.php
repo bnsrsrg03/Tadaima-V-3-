@@ -21,6 +21,8 @@ class JamOperasionalResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-clock';
 
+    protected static ?string $navigationLabel = 'Jam Operasional';
+
     protected static ?string $navigationGroup = 'Tentang Kami';
 
     public static function form(Form $form): Form

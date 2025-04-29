@@ -24,6 +24,8 @@ class MenuResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-plus';
 
+    protected static ?string $navigationLabel = 'Menu';
+
     public static function form(Form $form): Form
     {
         return $form
