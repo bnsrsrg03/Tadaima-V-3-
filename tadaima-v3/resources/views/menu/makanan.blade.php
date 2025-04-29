@@ -7,19 +7,29 @@
     <div class="row justify-content-center">
     @foreach ($menus as $menu)
     <div class="col-lg-4 col-md-6 col-sm-12 mb-5" data-aos="fade-up">
-        <div class="card h-100 shadow-lg position-relative" style="border-radius: 20px; overflow: hidden;">
-            {{-- Kalau bestseller, tampilkan label best seller --}}
-            @if ($menu->bestseller)
-                <img src="{{ asset('assets/images/bestseller.png') }}" alt="Best Seller" class="best-seller-badge">
-            @endif
+    <div class="card shadow-lg position-relative" 
+         style="width: 357px; height: 452.06px; border-radius: 20px; overflow: hidden;">
+         
+        {{-- Kalau bestseller, tampilkan label best seller --}}
+        @if ($menu->bestseller)
+            <img src="{{ asset('assets/images/bestseller.png') }}" alt="Best Seller" class="best-seller-badge">
+        @endif
 
-            <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->name }}" class="card-img-top" style="height: 300px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-            <div class="card-body text-center d-flex flex-column">
-                <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
-                <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">Rp{{ number_format($menu->price, 0, ',', '.') }}</p>
-            </div>
+        <img src="{{ asset('storage/' . $menu->image) }}" 
+             alt="{{ $menu->name }}" 
+             class="card-img-top" 
+             style="height: 300px; width: 100%; object-fit: cover;">
+             
+        <div class="card-body text-center d-flex flex-column justify-content-center" 
+             style="height: 152.06px;">
+            <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
+            <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">
+                Rp{{ number_format($menu->price, 0, ',', '.') }}
+            </p>
         </div>
     </div>
+</div>
+
 @endforeach
 
     </div>

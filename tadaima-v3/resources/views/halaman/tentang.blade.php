@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
+
 @section('content')
 
-
-
-<section class="py-24 px-6 md:px-20">
+<!-- Sejarah -->
+<section class="py-32 px-6 md:px-20 bg-gray-100 shadow-lg rounded-xl overflow-hidden">
   <div class="container mx-auto max-w-4xl">
     <h2 
-      class="text-3xl md:text-4xl font-bold text-black mb-6"
+      class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center uppercase tracking-wide relative"
       data-aos="fade-down"
       data-aos-duration="800"
     >
       Sejarah Singkat Berdirinya Rumah Makan Tadaima
+      <span class="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
     </h2>
     <p
-      class="leading-relaxed mb-4 text-gray-700"
+      class="leading-relaxed mb-6 text-gray-700 text-justify text-lg"
       data-aos="fade-down"
       data-aos-duration="800"
       data-aos-delay="200"
@@ -23,7 +24,7 @@
       Berdiri sejak tahun 2023, rumah makan ini menawarkan berbagai jenis ramen autentik dan kopi spesial yang menggugah selera.
     </p>
     <p
-      class="leading-relaxed mb-4 text-gray-700"
+      class="leading-relaxed mb-6 text-gray-700 text-justify text-lg"
       data-aos="fade-down"
       data-aos-duration="800"
       data-aos-delay="400"
@@ -32,7 +33,7 @@
       Selain itu, berbagai pilihan menu lainnya seperti rice bowl dan makanan ringan khas Jepang juga tersedia untuk melengkapi pengalaman kuliner pelanggan.
     </p>
     <p
-      class="leading-relaxed text-gray-700"
+      class="leading-relaxed text-gray-700 text-justify text-lg"
       data-aos="fade-down"
       data-aos-duration="800"
       data-aos-delay="600"
@@ -43,15 +44,15 @@
   </div>
 </section>
 
+
 <script>
   AOS.init({
     once: true 
   });
 </script>
 
-
 <!-- Profil Karyawan -->
-<section class="tim-kami">
+<section class="tim-kami" data-aos="fade-right" data-aos-duration="1000">
   <div class="container">
     <h2>Profil Karyawan</h2>
     <div class="row justify-content-center">
@@ -71,9 +72,8 @@
   </div>
 </section>
 
-
 <!-- Galeri -->
-<section class="galeri py-5" style="background-color: #f2f2f2;">
+<section class="galeri py-5" style="background-color: #f2f2f2;" data-aos="fade-left" data-aos-duration="1000">
     <div class="container text-center">
         <h2 class="mb-3">Galeri</h2>
         <p class="mb-5">Temukan berbagai momen spesial kami yang diabadikan melalui galeri ini. 
@@ -89,19 +89,22 @@
                     </div>
                 @endforeach
             </div>
-
-            <!-- Custom Arrow -->
             <div class="swiper-button-next custom-nav"></div>
             <div class="swiper-button-prev custom-nav"></div>
         </div>
     </div>
 </section>
 
-<!-- Link SwiperJS -->
+<script>
+  AOS.init({
+    once: true 
+  });
+</script>
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<!-- Custom CSS -->
 <style>
     .swiper-slide .card:hover img {
         transform: scale(1.05);
@@ -110,7 +113,7 @@
     .custom-nav {
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #007bff, #00c6ff);
+        background: linear-gradient(135deg,rgb(179, 33, 0),rgb(179, 33, 0));
         border-radius: 50%;
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         display: flex;
@@ -121,7 +124,7 @@
         transition: 0.3s;
     }
     .custom-nav:hover {
-        background: linear-gradient(135deg, #0056b3, #00aaff);
+        background: linear-gradient(135deg,rgb(179, 33, 0),rgba(255, 0, 0, 0.61));
         transform: scale(1.1);
     }
     .swiper-button-next::after,
