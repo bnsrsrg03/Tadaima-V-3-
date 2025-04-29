@@ -15,7 +15,7 @@
       <span class="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
     </h2>
     <p
-      class="leading-relaxed mb-6 text-gray-700 text-justify text-lg"
+      class="leading-relaxed mb-6 text-gray-700 text-center text-lg"
       data-aos="fade-down"
       data-aos-duration="800"
       data-aos-delay="200"
@@ -24,7 +24,7 @@
       Berdiri sejak tahun 2023, rumah makan ini menawarkan berbagai jenis ramen autentik dan kopi spesial yang menggugah selera.
     </p>
     <p
-      class="leading-relaxed mb-6 text-gray-700 text-justify text-lg"
+      class="leading-relaxed mb-6 text-gray-700 text-center text-lg"
       data-aos="fade-down"
       data-aos-duration="800"
       data-aos-delay="400"
@@ -33,7 +33,7 @@
       Selain itu, berbagai pilihan menu lainnya seperti rice bowl dan makanan ringan khas Jepang juga tersedia untuk melengkapi pengalaman kuliner pelanggan.
     </p>
     <p
-      class="leading-relaxed text-gray-700 text-justify text-lg"
+      class="leading-relaxed text-gray-700 text-center text-lg"
       data-aos="fade-down"
       data-aos-duration="800"
       data-aos-delay="600"
