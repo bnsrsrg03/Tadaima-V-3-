@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tadaima - Ramen and Coffee</title>
+    
+    <link rel="icon" type="image/png" href="{{url('assets/images/logo.jpg')}}" class="logo">
+
+    
 
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
