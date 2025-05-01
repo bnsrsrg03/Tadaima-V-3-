@@ -468,3 +468,29 @@ i, svg {
         width: 100%;
     }
 }
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 100px; /* dinaikkan dari 40px agar tidak bertabrakan */
+    right: 40px;
+    z-index: 99; /* pastikan tetap muncul di atas */
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    transition: all 0.3s ease;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #ff4c4c;
+  }
+  @media (max-width: 768px) {
+    #scrollToTopBtn {
+      bottom: 120px; /* dinaikkan lebih jauh di mobile */
+    }
+  }
+  

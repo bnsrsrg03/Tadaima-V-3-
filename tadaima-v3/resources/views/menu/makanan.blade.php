@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
     @foreach ($menus as $menu)
     <div class="col-lg-4 col-md-6 col-sm-12 mb-5" data-aos="fade-up">
-    <div class="card shadow-lg position-relative" 
+    <div class="card shadow-lg position-relative card-hover" 
          style="width: 357px; height: 452.06px; border-radius: 20px; overflow: hidden;">
          
         {{-- Kalau bestseller, tampilkan label best seller --}}
@@ -29,10 +29,19 @@
         </div>
     </div>
 </div>
-
 @endforeach
+</div>
 
-    </div>
+<style>
+.card-hover {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: scale(1.05);
+}
+</style>
+
 
     <div class="d-flex justify-content-center mt-4">
         {{ $menus->links('pagination::bootstrap-5') }}

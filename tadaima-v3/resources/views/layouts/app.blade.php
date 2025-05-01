@@ -21,7 +21,7 @@
     @stack('styles')
 </head>
 <body>
-
+      </div>
 <header class="navbar">
     <div class="navbar-container">
         <div class="navbar-left">
@@ -31,8 +31,8 @@
             <button class="menu-toggle" id="menu-toggle">
                 <i class="fa fa-bars"></i>
             </button>
+            
         </div>
-
         <nav class="navbar-right">
             <ul class="nav-links" id="nav-links">
                 <li><a href="{{ route('home') }}">Beranda</a></li>
@@ -101,6 +101,8 @@
 
         toggle.addEventListener('click', function () {
             navLinks.classList.toggle('active');
+
+            
         });
     });
 </script>
