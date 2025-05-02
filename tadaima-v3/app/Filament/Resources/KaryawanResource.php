@@ -65,8 +65,7 @@ class KaryawanResource extends Resource
                     ->height(80), // opsional, bisa diatur tinggi gambar
                     
                 TextColumn::make('name')
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(),
                
                 TextColumn::make('position'),
              
