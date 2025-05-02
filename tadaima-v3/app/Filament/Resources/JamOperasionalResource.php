@@ -58,7 +58,6 @@ class JamOperasionalResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('day')
                 ->label('Hari')
-                ->sortable()
                 ->searchable(),
 
                 Tables\Columns\TextColumn::make('open_time')
