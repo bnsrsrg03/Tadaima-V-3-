@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateJamOperasional extends CreateRecord
 {
     protected static string $resource = JamOperasionalResource::class;
+
+    protected function getRedirectUrl(): string
+{
+    return JamOperasionalResource::getUrl('index');
+}
 }

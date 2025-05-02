@@ -10,10 +10,8 @@ class EditGaleri extends EditRecord
 {
     protected static string $resource = GaleriResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            // Actions\DeleteAction::make(),
-        ];
-    }
+    protected function getRedirectUrl(): string
+{
+    return GaleriResource::getUrl('index');
+}
 }

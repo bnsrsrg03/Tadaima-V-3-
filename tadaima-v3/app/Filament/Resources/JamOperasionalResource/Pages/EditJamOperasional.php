@@ -10,10 +10,8 @@ class EditJamOperasional extends EditRecord
 {
     protected static string $resource = JamOperasionalResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            // Actions\DeleteAction::make(),
-        ];
-    }
+    protected function getRedirectUrl(): string
+{
+    return JamOperasionalResource::getUrl('index');
+}
 }

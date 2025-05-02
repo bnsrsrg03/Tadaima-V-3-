@@ -10,10 +10,8 @@ class EditKaryawan extends EditRecord
 {
     protected static string $resource = KaryawanResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            // Actions\DeleteAction::make(),
-        ];
-    }
+    protected function getRedirectUrl(): string
+{
+    return KaryawanResource::getUrl('index');
+}
 }

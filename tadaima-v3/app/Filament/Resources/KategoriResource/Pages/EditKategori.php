@@ -10,10 +10,8 @@ class EditKategori extends EditRecord
 {
     protected static string $resource = KategoriResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            // Actions\DeleteAction::make(),
-        ];
-    }
+    protected function getRedirectUrl(): string
+{
+    return KategoriResource::getUrl('index');
+}
 }

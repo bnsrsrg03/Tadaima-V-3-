@@ -10,12 +10,8 @@ class EditUlasan extends EditRecord
 {
     protected static string $resource = UlasanResource::class;
 
-    protected function getHeaderActions(): array
+    protected function getRedirectUrl(): string
     {
-        return [
-            // Actions\DeleteAction::make(),
-            // Actions\ForceDeleteAction::make(),
-            // Actions\RestoreAction::make(),
-        ];
+        return UlasanResource::getUrl('index');
     }
 }
