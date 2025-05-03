@@ -138,7 +138,8 @@
             <div class="alert-error">{{ $message }}</div>
         @enderror
 
-        <button type="submit" class="btn-submit"></button>
+        <button type="button" class="btn-submit" onclick="showConfirmModal()"></button>
+
     </form>
 
     <p class="desc-ulasan">
@@ -162,5 +163,45 @@
 </div>
 
 @include('components.whatsapp-button')
+
+<!-- Modal Konfirmasi -->
+<div id="reviewModal" style="display: none; position: fixed; top: 0; left: 0; 
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); 
+    align-items: center; justify-content: center; z-index: 9999;">
+    <div style="background-color: white; padding: 30px; border-radius: 20px; width: 300px; text-align: center;">
+        <p style="margin-bottom: 20px;">
+            Setelah mengirim ulasan, ulasan Anda akan ditampilkan secara permanen dan tidak dapat dihapus atau diedit, kecuali oleh admin yang mengelolanya
+        </p>
+        <div style="display: flex; justify-content: space-between;">
+            <button onclick="closeModal()" style="padding: 10px 20px; border: none; background: #eee; border-radius: 10px;">Kembali</button>
+            <button onclick="submitForm()" style="padding: 10px 20px; background-color: #2BB5F9; color: white; border: none; border-radius: 10px;">Kirim ulasan</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.querySelector('.form-ulasan');
+    const modal = document.getElementById('reviewModal');
+
+    let shouldSubmit = false;
+
+    form.addEventListener('submit', function(e) {
+        if (!shouldSubmit) {
+            e.preventDefault(); // Tahan submit
+            modal.style.display = 'flex';
+        }
+    });
+
+    function closeModal() {
+        modal.style.display = 'flex';
+    }
+
+    function submitForm() {
+        shouldSubmit = true;
+        form.submit();
+    }
+</script>
+
+
 
 @endsection

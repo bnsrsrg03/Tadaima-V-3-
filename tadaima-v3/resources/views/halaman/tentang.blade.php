@@ -9,69 +9,56 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
 </style>
 
 <!-- Sejarah -->
-<!-- Sejarah -->
-<section class="py-32 px-6 md:px-20 bg-black/50 backdrop-blur-sm shadow-lg rounded-xl overflow-hidden">
+<section class="sejarah-singkat py-32 px-6 md:px-20 bg-white shadow-lg rounded-xl overflow-hidden">
   <div class="container mx-auto max-w-4xl">
-    <h2 
-      class="text-4xl md:text-5xl font-bold text-white mb-8 text-center uppercase tracking-wide relative"
-      data-aos="fade-down"
-      data-aos-duration="800"
-    >
+    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center uppercase tracking-wide relative"
+        data-aos="fade-down"
+        data-aos-duration="800">
       Sejarah Singkat Berdirinya Rumah Makan Tadaima
       <span class="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-400"></span>
     </h2>
-    <p
-      class="leading-relaxed mb-6 text-white text-center text-lg"
-      data-aos="fade-down"
-      data-aos-duration="800"
-      data-aos-delay="200"
-    >
+    <p class="leading-relaxed mb-6 text-gray-800 text-center text-lg"
+        data-aos="fade-down"
+        data-aos-duration="800"
+        data-aos-delay="200">
       Tadaima Ramen and Coffee merupakan salah satu rumah makan khas Jepang yang terletak di Jl. Gereja 3C, Balige, Sumatera Utara, Indonesia.
       Berdiri sejak tahun 2023, rumah makan ini menawarkan berbagai jenis ramen autentik dan kopi spesial yang menggugah selera.
     </p>
-    <p
-      class="leading-relaxed mb-6 text-white text-center text-lg"
-      data-aos="fade-down"
-      data-aos-duration="800"
-      data-aos-delay="400"
-    >
+    <p class="leading-relaxed mb-6 text-gray-800 text-center text-lg"
+        data-aos="fade-down"
+        data-aos-duration="800"
+        data-aos-delay="400">
       Dengan konsep interior yang mengusung budaya Jepang, Tadaima Ramen and Coffee menciptakan suasana yang nyaman dan cocok untuk berkumpul bersama keluarga maupun teman-teman.
       Selain itu, berbagai pilihan menu lainnya seperti rice bowl dan makanan ringan khas Jepang juga tersedia untuk melengkapi pengalaman kuliner pelanggan.
     </p>
-    <p
-      class="leading-relaxed text-white text-center text-lg"
-      data-aos="fade-down"
-      data-aos-duration="800"
-      data-aos-delay="600"
-    >
+    <p class="leading-relaxed text-gray-800 text-center text-lg"
+        data-aos="fade-down"
+        data-aos-duration="800"
+        data-aos-delay="600">
       Kami berkomitmen untuk selalu memberikan pelayanan terbaik dan menghadirkan hidangan berkualitas dengan cita rasa yang autentik.
       Nikmati pengalaman bersantap yang berbeda di Tadaima Ramen and Coffee!
     </p>
   </div>
 </section>
 
-<script>
-  AOS.init({
-    once: true 
-  });
-</script>
 
 <!-- Profil Karyawan -->
-<section class="tim-kami py-20 px-6 md:px-20 bg-white/30 backdrop-blur-sm shadow-lg rounded-xl" data-aos="fade-right" data-aos-duration="1000">
+<section class="tim-kami py-20 px-6 md:px-20 mt-28 mb-28" data-aos="fade-right" data-aos-duration="1000">
   <div class="container mx-auto">
-    <h2 class="text-center text-3xl font-bold mb-10 text-gray-800">Profil Karyawan</h2>
+    <h2 class="text-center text-3xl font-bold mb-10 text-white drop-shadow-lg">Profil Karyawan</h2>
     <div class="row justify-content-center">
       @foreach ($karyawans as $karyawan)
         <div class="col-karyawan mb-4">
-          <div class="card text-center h-100 bg-white/70 backdrop-blur-sm rounded-xl shadow-md overflow-hidden">
+          <div class="card text-center h-100 bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white/30 shadow-md">
             <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
                  class="card-img-top" alt="{{ $karyawan->name }}">
             <div class="card-body">
-              <h5 class="card-title text-gray-900">{{ $karyawan->name }}</h5>
-              <p class="card-text text-gray-700">{{ $karyawan->position }}</p>
+              <h5 class="card-title text-white drop-shadow-md">{{ $karyawan->name }}</h5>
+              <p class="card-text text-white/90 drop-shadow-sm">{{ $karyawan->position }}</p>
             </div>
           </div>
         </div>
@@ -80,9 +67,8 @@
   </div>
 </section>
 
-
 <!-- Galeri -->
-<section class="galeri py-20 bg-white/80 backdrop-blur-sm shadow-lg rounded-xl" data-aos="fade-left" data-aos-duration="1000">
+<section class="galeri py-30 bg-white/80 backdrop-blur-sm shadow-lg rounded-xl mt-28 mb-28" data-aos="fade-left" data-aos-duration="1000">
   <div class="container text-center">
     <h2 class="text-3xl font-bold mb-3">Galeri</h2>
     <p class="mb-5">Temukan berbagai momen spesial kami melalui galeri ini.</p>
@@ -102,6 +88,7 @@
   </div>
 </section>
 
+
 <!-- Jam Operasional -->
 <section class="jam-operasional" style="background-color: #b30000; padding: 20px 0;">
   <div class="container text-center">
@@ -114,6 +101,8 @@
     </p>
   </div>
 </section>
+
+
 
 <!-- Peta Lokasi -->
 <section class="lokasi" data-aos="fade-up">
@@ -188,7 +177,7 @@
 <button id="scrollToTopBtn"
   class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full border-2 border-red-600 text-red-600 bg-transparent hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300"
   aria-label="Kembali ke atas">
-  <i class="fas fa-chevron-up"></i>
+  <i class="fas fa-chevron-up" style="font-size: 27px;"></i>
 </button>
 
 <!-- Script Scroll to Top -->

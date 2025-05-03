@@ -6,10 +6,6 @@
     <title>Tadaima - Ramen and Coffee</title>
     
     <link rel="icon" type="image/png" href="{{url('assets/images/logo.jpg')}}" class="logo">
-
-    
-
-    {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -68,26 +64,39 @@
 
         <div class="footer-info">
             <h4>Lokasi</h4>
-            <p>Jln Gereja No 3 C,<br>Balige, Sumatera Utara,<br>Indonesia</p>
+            <p><i class="fas fa-map-marker-alt"></i> Jln Gereja No 3 C,Balige, Sumatera Utara,<br>Indonesia</p>
         </div>
 
         <div class="footer-contact">
             <h4>Kontak</h4>
-            <p><i class="fas fa-phone"></i> +82 10-3925-6499</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:tadaimaramencoffee@gmail.com">tadaimaramencoffee@gmail.com</a></p>
+            <p>
+                <i class="fab fa-whatsapp"></i> 
+                <a href="https://wa.me/821039256499" target="_blank">+82 10-3925-6499</a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i> 
+                <a href="mailto:tadaimaramencoffee@gmail.com">tadaimaramencoffee@gmail.com</a>
+            </p>
         </div>
 
         <div class="footer-sosmed">
             <h4>Sosial Media</h4>
-            <p><i class="fab fa-instagram"></i> tadaimaramen</p>
-            <p><i class="fab fa-tiktok"></i> tadaimaramen</p>
+            <p>
+                <i class="fab fa-instagram"></i> 
+                <a href="https://www.instagram.com/tadaimaramen?igsh=Y3cwajc3ZDgwdThi" target="_blank">tadaimaramen</a>
+            </p>
+            <p>
+                <i class="fab fa-tiktok"></i> 
+                <a href="https://www.tiktok.com/@tadaimaramen?_t=ZS-8w0h4GlwaSP&_r=1" target="_blank">tadaimaramen</a>
+            </p>
         </div>
     </div>
-
+  
     <div class="footer-bottom">
         <p>&copy; 2025 Tadaima Ramen and Coffee. All rights reserved</p>
     </div>
 </footer>
+
 
 {{-- Scripts --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -42,14 +42,15 @@
 
         {{-- Teks di atas background --}}
         <div class="position-absolute top-50 start-0 translate-middle-y ps-4">
-            <h4>Pesan Tempat Anda Sekarang dan Nikmati Layanan Terbaik dari Kami</h4>
+            
+        <h4 class="typing">Pesan Meja Anda &amp; Nikmati Layanan Terbaik!</h4>
+
         </div>
     </div>
     {{-- Gambar kecil (thumbnail) --}}
     <div class="position-absolute bottom-0 end-0 p-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"> 
     <div class="custom-frame border border-light shadow-lg" style="width: 650px; position: relative;">
         <img src="{{ asset('assets/images/meja.jpg') }}" class="img-fluid" alt="Thumbnail">
-        <!-- Sudut Bingkai -->
         <div class="corner top-left"></div>
         <div class="corner top-right"></div>
         <div class="corner bottom-left"></div>
@@ -105,24 +106,30 @@
 
 </div>
 </div>
-
 @include('components.whatsapp-button')
 
 <button id="scrollToTopBtn"
+  style="display: none;"
   class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full border-2 border-red-600 text-red-600 bg-transparent hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300"
   aria-label="Kembali ke atas">
-  <i class="fas fa-chevron-up"></i>
+  <i class="fas fa-chevron-up" style="font-size: 27px;"></i>
+ <!-- Panah lebih besar -->
 </button>
 
-<!-- Script Scroll to Top -->
-<script>
-  const btn = document.getElementById("scrollToTopBtn");
-  window.onscroll = () => {
-    btn.style.display = (window.scrollY > 200) ? "flex" : "none";
-  };
-  btn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-</script>
-
 @endsection
+
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("scrollToTopBtn");
+        window.addEventListener('scroll', () => {
+            btn.style.display = (window.scrollY > 700) ? "flex" : "none";
+        });
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+@endpush
+

@@ -4,6 +4,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
 
 .container {
     width: 1440px;
@@ -195,7 +200,6 @@ header {
     z-index: 1;
 }
 
-/* Custom Font */
 @font-face {
     font-family: 'Shikamaru';
     src: url('/assets/fonts/Shikamaru.ttf') format('truetype');
@@ -331,6 +335,7 @@ footer {
     .footer-info, .footer-links, .footer-sosmed {
         max-width: 100%;
         text-align: center;
+  
     }
 }
 
@@ -364,6 +369,7 @@ i, svg {
 
 }
 
+/*Whattsap*/
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
@@ -385,15 +391,15 @@ i, svg {
 }
 
 .whatsapp-button i {
-    font-size: 25px; /* Ukuran icon */
-    margin-right: 2px; /* Jarak icon ke teks */
-    vertical-align: middle; /* Biar icon sejajar dengan teks */
+    font-size: 25px; 
+    margin-right: 2px; 
+    vertical-align: middle; 
 }
 
 
-/* Section */
+/*Profil karyawan */
 .tim-kami {
-    background-color: #f2f2f2;  /* abu-abu terang */
+    background-color: rgba(0, 0, 0, 0.5); 
     padding: 4rem 0;
   }
   .tim-kami .container h2 {
@@ -401,11 +407,7 @@ i, svg {
     font-weight: 700;
     margin-bottom: 2.5rem;
   }
-  
-  /* Grid responsif: 
-     - di desktop 5 kolom, 
-     - di tablet 3 kolom, 
-     - di HP 1 kolom */
+
   .tim-kami .row {
     --bs-gutter-x: 1.5rem;
   }
@@ -419,7 +421,7 @@ i, svg {
     .tim-kami .col-karyawan { flex: 0 0 100%; max-width: 100%; }
   }
   
-  /* Kartu */
+
   .tim-kami .card {
     border: none;
     border-radius: 0.75rem;
@@ -431,15 +433,13 @@ i, svg {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
-  
-  /* Gambar */
+ 
   .tim-kami .card-img-top {
     width: 100%;
     height: 350px;
     object-fit: cover;
   }
   
-  /* Body & teks */
   .tim-kami .card-body {
     padding: 1rem;
     background-color: #fff;
@@ -468,11 +468,13 @@ i, svg {
         width: 100%;
     }
 }
+
+/**/
 #scrollToTopBtn {
     position: fixed;
-    bottom: 100px; /* dinaikkan dari 40px agar tidak bertabrakan */
-    right: 40px;
-    z-index: 99; /* pastikan tetap muncul di atas */
+    bottom: 100px; 
+    right: 24px; /* <--- ini yang perlu ditambahkan */
+    z-index: 99; 
     background-color: #b30000;
     color: white;
     border: none;
@@ -483,14 +485,101 @@ i, svg {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     display: none;
     transition: all 0.3s ease;
-  }
-  
+}
+
   #scrollToTopBtn:hover {
     background-color: #ff4c4c;
   }
   @media (max-width: 768px) {
     #scrollToTopBtn {
-      bottom: 120px; /* dinaikkan lebih jauh di mobile */
+      bottom: 120px; 
     }
   }
   
+
+  /*tulisan denah*/
+  .typing {
+  opacity: 0;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  animation:
+    fadeInText 2s forwards   0.5s,
+    typing      3s steps(30) forwards 0.5s,
+    blink       0.7s step-end infinite 3.5s;
+}
+
+/* Keyframes fade-in */
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+
+/* Keyframes typing */
+@keyframes typing {
+  to { width: 100%; }
+}
+
+/* Keyframes cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.typing {
+    display: inline-block;  
+    opacity: 0;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    animation:
+      fadeInText 2s forwards   0.5s,
+      typing      3s steps(30) forwards 0.5s,
+      blink       0.7s step-end infinite 3.5s;
+  }
+  
+  @keyframes fadeInText {
+    to { opacity: 1; }
+  }
+  
+  @keyframes typing {
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .sejarah-singkat {
+    min-height: 70vh;  /* Mengisi 70% dari layar secara vertikal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Memastikan konten di tengah */
+    padding: 80px 0;  /* Memberikan ruang atas dan bawah */
+}
+
+.sejarah-singkat .container {
+    max-width: 100%;   /* Memastikan konten lebar penuh */
+    padding: 0 20px;   /* Memberikan sedikit ruang pada tepi kiri dan kanan */
+}
+
+.sejarah-singkat h2 {
+    font-size: 3rem;  /* Ukuran teks untuk judul */
+    text-align: center;  /* Teks berada di tengah */
+    margin-bottom: 20px;
+}
+
+.sejarah-singkat p {
+    font-size: 1.25rem; /* Ukuran teks untuk paragraf */
+    line-height: 1.8;   /* Mengatur jarak antar paragraf */
+    text-align: center; /* Teks berada di tengah */
+    max-width: 900px;   /* Membatasi lebar teks */
+    margin: 0 auto 20px; /* Memberikan margin bawah */
+}
+
+.sejarah-singkat h2, .sejarah-singkat p {
+    animation-duration: 1.5s;
+    animation-delay: 0.3s;
+}
+.galeri {
+    background-color: rgba(255, 255, 255, 0.3) !important;  /* Transparan putih */
+  }
