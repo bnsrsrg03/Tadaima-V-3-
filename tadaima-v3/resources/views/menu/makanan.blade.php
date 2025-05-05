@@ -47,8 +47,65 @@
         {{ $menus->links('pagination::bootstrap-5') }}
     </div>
 </div>
+
+<div class="container py-5 text-center bg-light rounded shadow-sm">
+    <h1 class="text-3xl font-bold">Info Pemesanan</h1>
+    <p class="mt-2 text-muted">Informasi pemesanan paket di Rempah Wangi</p>
+
+    <div class="row mt-5">
+        <!-- Pemesanan -->
+        <div class="col-md-4 mb-4">
+            <div class="mb-3" style="font-size: 2rem;">📞</div>
+            <h4 class="fw-bold">Pemesanan</h4>
+            <p class="mt-2">Jl. RS. Fatmawati Raya No.29,<br>
+                RT.8/RW.3, Cilandak Bar., Kec. Cilandak,<br>
+                Kota Jakarta Selatan, DKI Jakarta 12430</p>
+            <p class="mt-2">WhatsApp: +6281806608888</p>
+            <p class="mt-2">Senin - Sabtu<br>Fast Response Chat 10.00 - 20.00</p>
+        </div>
+
+        <!-- Pengiriman -->
+        <div class="col-md-4 mb-4">
+            <div class="mb-3" style="font-size: 2rem;">📦</div>
+            <h4 class="fw-bold">Pengiriman</h4>
+            <p class="mt-2">Pemesanan sebaiknya dilakukan H-2 untuk jadwal pengiriman.</p>
+            <p class="mt-2">Jam pengiriman disesuaikan dengan permintaan customer.</p>
+        </div>
+
+        <!-- Pembayaran -->
+        <div class="col-md-4 mb-4">
+            <div class="mb-3" style="font-size: 2rem;">💵</div>
+            <h4 class="fw-bold">Pembayaran</h4>
+            <p class="mt-2">Cash On Delivery atau transfer.</p>
+            <p class="mt-2">Transfer harus lunas sebelum pengiriman.<br>
+                Bukti transfer diserahkan saat serah terima barang.</p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <!-- Pembatalan -->
+        <div class="col-md-6 mb-4">
+            <div class="mb-3" style="font-size: 2rem;">❌</div>
+            <h4 class="fw-bold">Pembatalan</h4>
+            <p class="mt-2">Batal atau ubah pesanan via telepon saat jam layanan.<br>
+                Tidak berlaku di hari-H.</p>
+            <p class="mt-2">Konfirmasi final dilakukan H-1 via telepon.</p>
+        </div>
+
+        <!-- Harga & Biaya -->
+        <div class="col-md-6 mb-4">
+            <div class="mb-3" style="font-size: 2rem;">🏷️</div>
+            <h4 class="fw-bold">Harga & Biaya</h4>
+            <p class="mt-2">Harga dapat berubah sesuai kebijakan manajemen, termasuk pajak.</p>
+            <p class="mt-2">Pemotongan pajak dan materai ditanggung pemesan.</p>
+        </div>
+    </div>
+</div>
+
+
 @include('components.whatsapp-button')
 @endsection
+
 
 @section('styles')
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -61,8 +118,6 @@
         box-shadow: 0 18px 28px rgba(0, 0, 0, 0.15);
     }
 </style>
-
-
 
 @endsection
 

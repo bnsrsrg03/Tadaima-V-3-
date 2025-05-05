@@ -44,6 +44,7 @@ header {
     gap: 30px;
     margin-right: auto;
 }
+
 .logo {
     padding-left: 30px; 
 }
@@ -52,7 +53,8 @@ header {
     height: 56px;
     width: 56px;
     object-fit: cover;
-    border-radius: 50%;}
+    border-radius: 50%;
+}
 
 .navbar-right {
     display: flex;
@@ -70,22 +72,22 @@ header {
     padding: 0;
 }
 
-
 .nav-links li a {
     color: white;
     text-decoration: none;
     font-weight: 400; 
     font-size: 18px;
     padding: 8px 12px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
 }
-
 
 .nav-links li a:hover,
 .nav-profile a:hover {
     background-color: #AA1D1D;
     border-radius: 5px;
+    border-bottom: 2px solid #fff;
+    color: #FFD700;
 }
 
 .dropdown {
@@ -101,7 +103,11 @@ header {
     top: 100%;
     left: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none; 
+    padding: 0;
+    margin: 0;
 }
+
 
 .dropdown-content li a {
     display: block;
@@ -141,7 +147,7 @@ header {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #fff;
+        background-color: #AA1D1D; /* FIXED: tetap merah saat dikecilkan */
         width: 100%;
         position: absolute;
         top: 70px;
@@ -150,10 +156,15 @@ header {
         padding: 20px;
     }
 
+    .nav-links li a {
+        color: white;
+    }
+
     .nav-links.active {
         display: flex;
     }
 }
+
 
 /* === Hero Section === */
 .hero {
@@ -548,38 +559,67 @@ i, svg {
   @keyframes blink {
     50% { border-color: transparent; }
   }
-
   .sejarah-singkat {
-    min-height: 70vh;  /* Mengisi 70% dari layar secara vertikal */
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Memastikan konten di tengah */
-    padding: 80px 0;  /* Memberikan ruang atas dan bawah */
+    justify-content: center;
+    padding: 80px 0;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
 }
-
 .sejarah-singkat .container {
-    max-width: 100%;   /* Memastikan konten lebar penuh */
-    padding: 0 20px;   /* Memberikan sedikit ruang pada tepi kiri dan kanan */
-}
+    max-width: 1235px;  
+    margin: 0 auto;    
+    padding: 10px}
 
-.sejarah-singkat h2 {
-    font-size: 3rem;  /* Ukuran teks untuk judul */
-    text-align: center;  /* Teks berada di tengah */
+
+.judul-sejarah {
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 40px;
+    text-align: center;
     margin-bottom: 20px;
+    color: #1f2937;
+    font-weight: bold;
+    position: relative;
 }
 
 .sejarah-singkat p {
-    font-size: 1.25rem; /* Ukuran teks untuk paragraf */
-    line-height: 1.8;   /* Mengatur jarak antar paragraf */
-    text-align: center; /* Teks berada di tengah */
-    max-width: 900px;   /* Membatasi lebar teks */
-    margin: 0 auto 20px; /* Memberikan margin bawah */
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #1f2937;
+    margin-bottom: 20px;
+    max-width: 1235px;
+
 }
+
+@media (max-width: 768px) {
+    .sejarah-singkat p {
+        font-size: 18px; 
+    }
+}
+
 
 .sejarah-singkat h2, .sejarah-singkat p {
     animation-duration: 1.5s;
     animation-delay: 0.3s;
 }
+
+@media (max-width: 768px) {
+    .judul-sejarah {
+        font-size: 32px;
+    }
+
+    .sejarah-singkat p {
+        font-size: 0.875rem;
+    }
+}
+
+
 .galeri {
-    background-color: rgba(255, 255, 255, 0.3) !important;  /* Transparan putih */
+    background-color: rgba(255, 255, 255, 0.5) !important;  
   }

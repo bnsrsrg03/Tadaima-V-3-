@@ -50,7 +50,7 @@
     }
 
     .btn-submit::after {
-        content: "\27A4"; 
+        content: "\27A4";
     }
 
     .alert-success {
@@ -100,10 +100,14 @@
     }
 
     .ulasan-content {
-        background-color: #f1f1f1;
-        border-radius: 10px;
-        padding: 10px 15px;
-    }
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
 
     .whatsapp-button {
         position: fixed;
@@ -138,8 +142,7 @@
             <div class="alert-error">{{ $message }}</div>
         @enderror
 
-        <button type="button" class="btn-submit" onclick="showConfirmModal()"></button>
-
+        <button type="submit" class="btn-submit"></button>
     </form>
 
     <p class="desc-ulasan">
@@ -187,13 +190,20 @@
 
     form.addEventListener('submit', function(e) {
         if (!shouldSubmit) {
-            e.preventDefault(); // Tahan submit
+            e.preventDefault(); // tahan submit
+
+            const comment = document.getElementById('comment').value.trim();
+            if (comment === '') {
+                alert("Ulasan tidak boleh kosong!");
+                return;
+            }
+
             modal.style.display = 'flex';
         }
     });
 
     function closeModal() {
-        modal.style.display = 'flex';
+        modal.style.display = 'none';
     }
 
     function submitForm() {
@@ -201,7 +211,4 @@
         form.submit();
     }
 </script>
-
-
-
 @endsection
