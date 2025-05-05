@@ -29,7 +29,7 @@ class JamOperasionalResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('day')
+                Select::make('Hari')
                         ->options([
                             'senin' => 'Senin',
                             'selasa' => 'Selasa',
@@ -39,7 +39,16 @@ class JamOperasionalResource extends Resource
                             'sabtu' => 'Sabtu',
                             'minggu' => 'Minggu',                       
                         ])
-                        ->required(),
+                        ->required()
+                        ->rules([
+                            function (\Filament\Forms\Get $get) {
+                                return \Illuminate\Validation\Rule::unique('jam_operasional', 'day')
+                                    ->ignore(request()->route('record')); // pengecualian saat edit
+                            },
+                        ])
+                        ->validationMessages([
+                            'unique' => 'Hari yang sudah diinput sudah ada sebelumnya.',
+                        ]),
 
                         TimePicker::make('open_time')
                         ->label('Jam Buka')
