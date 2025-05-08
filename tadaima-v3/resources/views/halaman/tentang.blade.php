@@ -1,38 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-  body {
-    background-image: url('{{ asset('assets/images/meja.jpg') }}');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-</style>
 
 <!-- Sejarah -->
-<section class="sejarah-singkat py-32 px-6 md:px-20 bg-white shadow-lg rounded-xl overflow-hidden"> 
-  <div class="container mx-auto max-w-7xl"> <!-- Ubah dari max-w-4xl ke max-w-7xl -->
-    <h2 class="judul-sejarah"
-        data-aos="fade-down"
-        data-aos-duration="800">
+<section class="sejarah-singkat">
+  <div class="container">
+    <h2 class="judul-sejarah">
       Sejarah Singkat Berdirinya Rumah Makan Tadaima
-      <span class="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-400"></span>
+      <span class="underline"></span>
     </h2>
-    <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 mt-10"> <!-- Tambahkan grid 2 kolom -->
-      <div class="space-y-6 text-gray-800 text-justify text-base leading-relaxed"
-           data-aos="fade-down"
-           data-aos-duration="800"
-           data-aos-delay="200">
+    <div class="konten-sejarah">
+      <div class="gambar">
+        <img src="/assets/images/sejarah2.jpg" alt="Logo Tadaima">
+      </div>
+      <div class="teks">
         <p>
-          Tadaima Ramen and Coffee merupakan salah satu rumah makan khas Jepang yang terletak di Jl. Gereja 3C, Balige, Sumatera Utara, Indonesia.
-          Berdiri sejak tahun 2023, rumah makan ini menawarkan berbagai jenis ramen autentik dan kopi spesial yang menggugah selera.
-          Dengan konsep interior yang mengusung budaya Jepang, Tadaima Ramen and Coffee menciptakan suasana yang nyaman dan cocok untuk berkumpul bersama keluarga maupun teman-teman.
-          Selain itu, berbagai pilihan menu lainnya seperti rice bowl dan makanan ringan khas Jepang juga tersedia untuk melengkapi pengalaman kuliner pelanggan.
-          Kami berkomitmen untuk selalu memberikan pelayanan terbaik dan menghadirkan hidangan berkualitas dengan cita rasa yang autentik.
-          Nikmati pengalaman bersantap yang berbeda di Tadaima Ramen and Coffee!
+        Tadaima Ramen and Coffee merupakan salah satu rumah makan yang terletak di Jl. Gereja 3C, Balige, Sumatera Utara yang didirikan pada tahun 2023 dan masih memiliki 1 cabang. Tadaima Ramen and Coffee menawarkan menu makanan dengan khas ramen. Nama 'Tadaima' sendiri diambil dari bahasa Jepang yang berarti “Aku Pulang”, sebuah filosofi orang Jepang yang biasanya diucapkan saat seseorang kembali ke rumah. Dengan filosofi tersebut, Tadaima berharap setiap pengunjung bisa merasakan suasana yang hangat dan akrab seperti di rumah sendiri saat menikmati makanan di sini. 
+        Tadaima Ramen and Coffee menyediakan berbagai pilihan menu seperti ramen, dessert, kopi, ice cream, dan beberapa menu lokal lainnya seperti nasi snack. Tadaima Ramen and Coffee menawarkan pengalaman kuliner yang berbeda bagi para pecinta makanan.
+        </p>
+        <p>
+        Tholhas Tampubolon, pendiri Tadaima Ramen and Coffee melihat perkembangan industri kuliner, pariwisata, dan pembangunan di Balige mulai berkembang pesat. Bapak Tholhas sendiri memiliki ide untuk mendirikan sebuah rumah makan sebagai usaha bisnis kuliner pertamanya di Balige dengan nuansa yang berbeda.
+         Tadaima sendiri bukan menjadi nama pertama.
         </p>
       </div>
     </div>
@@ -40,39 +28,75 @@
 </section>
 
 
-<!-- Profil Karyawan -->
-<section class="tim-kami py-20 px-6 md:px-20 mt-28 mb-28" data-aos="fade-right" data-aos-duration="1000">
+@include('components.alasan')
+
+
+<!-- karyawan -->
+<section class="tim-kami overflow-hidden py-10">
   <div class="container mx-auto">
-    <h2 class="text-center text-3xl font-bold mb-10 text-white drop-shadow-lg">Profil Karyawan</h2>
-    <div class="row justify-content-center">
-      @foreach ($karyawans as $karyawan)
-        <div class="col-karyawan mb-4">
-          <div class="card text-center h-100 bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white/30 shadow-md">
-            <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
-                 class="card-img-top" alt="{{ $karyawan->name }}">
-            <div class="card-body">
-              <h5 class="card-title text-white drop-shadow-md">{{ $karyawan->name }}</h5>
-              <p class="card-text text-white/90 drop-shadow-sm">{{ $karyawan->position }}</p>
-            </div>
-          </div>
+    <h2 style="font-size: 40px;" class="text-center font-bold mb-10 text-black drop-shadow-lg">
+      Profil Karyawan
+    </h2>
+    <div class="overflow-hidden relative w-full">
+  <div class="flex animate-scroll gap-4 w-max">
+    @foreach ($karyawans as $karyawan)
+      <div class="flex flex-col items-center flex-shrink-0 w-[310px]">
+        <div class="overflow-hidden">
+          <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
+               alt="{{ $karyawan->name }}" class="img-karyawan">
         </div>
-      @endforeach
-    </div>
+        <p class="mt-2 text-[20px] text-center text-black font-medium truncate w-full">
+          {{ $karyawan->name }}
+        </p>
+        <p class="text-center text-gray-600 text-sm truncate w-full">{{ $karyawan->position }}</p>
+      </div>
+    @endforeach
+
+    @foreach ($karyawans as $karyawan)
+      <div class="flex flex-col items-center flex-shrink-0 w-[310px]">
+        <div class="overflow-hidden">
+          <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
+               alt="{{ $karyawan->name }}" class="img-karyawan">
+        </div>
+        <p class="mt-2 text-xs text-center text-black font-medium truncate w-full">
+          {{ $karyawan->name }}
+        </p>
+        <p class="text-center text-gray-600 text-sm truncate w-full"> {{ $karyawan->position }}</p>
+      </div>
+    @endforeach
+  </div>
+</div>
+</div>
   </div>
 </section>
+
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+  width: max-content;
+  display: flex;
+}
+</style>
+
+
 
 <!-- Galeri -->
 <section class="galeri py-30 bg-white/60 backdrop-blur-sm shadow-lg rounded-xl mt-28 mb-28 text-black" data-aos="fade-left" data-aos-duration="1000">
   <div class="container text-center">
-  <h2 class="text-3xl font-bold mb-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
-  Galeri</h2>
+    <h2 class="text-3xl font-bold mb-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+      Galeri
+    </h2>
     <p class=" font-bold mb-5">Temukan berbagai momen spesial kami melalui galeri ini.</p>
     <div class="swiper galeriSwiper position-relative">
       <div class="swiper-wrapper">
         @foreach ($galeris as $galeri)
           <div class="swiper-slide d-flex justify-content-center">
             <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="max-width: 400px;">
-              <img src="{{ asset('storage/' . $galeri->image) }}" alt="Galeri" class="img-fluid" style="transition: 0.5s;">
+              <img src="{{ asset('storage/' . $galeri->image) }}" alt="Galeri" class="img-fluid" style="width: 1068px; height: 670px; object-fit: cover; transition: 0.5s;">
             </div>
           </div>
         @endforeach
