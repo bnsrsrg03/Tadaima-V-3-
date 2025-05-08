@@ -28,7 +28,6 @@ class UlasanResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('id'),
                 Textarea::make('comment'),
             ]);
     }
@@ -37,19 +36,21 @@ class UlasanResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('comment'),
+                TextColumn::make('comment')
+                ->wrap()
+                ->limit(50),
             ])
             ->filters([
                 // Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                ->label('Selengkapnya')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                    // Tables\Actions\ForceDeleteBulkAction::make(),
-                    // Tables\Actions\RestoreBulkAction::make(),
                 ]),
             ]);
     }
