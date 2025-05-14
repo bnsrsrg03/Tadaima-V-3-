@@ -9,36 +9,27 @@ class KaryawanSeeder extends Seeder
 {
     public function run(): void
     {
-        $karyawans = [
+        Karyawan::insert([
             [
                 'name' => 'Tholhas Tampubolon',
-                'position' => 'Owner',
-                'image' => 'karyawan/owner.jpg'
-            ],
-            [
-                'name' => 'Henry G. Z. Sinambela',
-                'position' => 'Waiters',
-                'image' => 'karyawan/henry.jpg'
-            ],
-            [
-                'name' => 'Zefri Gusman Halawa',
-                'position' => 'Chef',
-                'image' => 'karyawan/zefri.jpg'
-            ],
-            [
-                'name' => 'Jesse Tingkos Tampubolon',
-                'position' => 'Chef',
-                'image' => 'karyawan/jesse.jpg'
+                'position' => 'Manejer & Pendiri',
+                'image' => 'tholhas.jepg',
             ],
             [
                 'name' => 'Ruhut Ksatria Tampubolon',
-                'position' => 'Chef',
-                'image' => 'karyawan/ruhut.jpg'
+                'position' => 'Cook helper',
+                'image' => 'Ruhut Tampu.jpg',
             ],
-        ];
-
-        foreach ($karyawans as $karyawan) {
-            Karyawan::create($karyawan);
-        }
+            [
+                'name' => 'Jese tingkos Tampubolon',
+                'position' => 'Cook Helper',
+                'image' => 'Jese Tampubolon.jpg',
+            ],
+            [
+                'name' => 'Zefri Gusman Halawa',
+                'position' => 'Manejer & Pemilik',
+                'image' => 'zafri hero.jpg',
+            ],
+        ]);
     }
 }

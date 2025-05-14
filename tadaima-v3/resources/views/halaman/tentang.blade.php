@@ -85,28 +85,38 @@
 
 
 <!-- Galeri -->
-<section class="galeri py-30 bg-white/60 backdrop-blur-sm shadow-lg rounded-xl mt-28 mb-28 text-black" data-aos="fade-left" data-aos-duration="1000">
+<section class="galeri bg-white/60 backdrop-blur-sm shadow-lg rounded-xl text-black" 
+         data-aos="fade-left" data-aos-duration="1000">
   <div class="container text-center">
-    <h2 class="text-3xl font-bold mb-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+    <h2 class="text-3xl font-bold mb-5" style="font-size: 40px; font-weight: bold; font-family: 'Inter', sans-serif; text-shadow: 0 2px 6px rgba(0,0,0,0.6);">
       Galeri
     </h2>
-    <p class=" font-bold mb-5">Temukan berbagai momen spesial kami melalui galeri ini.</p>
     <div class="swiper galeriSwiper position-relative">
       <div class="swiper-wrapper">
-        @foreach ($galeris as $galeri)
-          <div class="swiper-slide d-flex justify-content-center">
-            <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="max-width: 400px;">
-              <img src="{{ asset('storage/' . $galeri->image) }}" alt="Galeri" class="img-fluid" style="width: 1068px; height: 670px; object-fit: cover; transition: 0.5s;">
-            </div>
-          </div>
-        @endforeach
+      @foreach ($galeris as $index => $galeri)
+  <div class="swiper-slide d-flex justify-content-center">
+    <div class="card border-0 shadow-lg rounded-4 overflow-hidden"
+         style="max-width: 1068px; width: 1068px; height: 600px;">
+      @if ($index === 0)
+        <video autoplay muted loop
+               style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s;">
+          <source src="{{ asset('assets/images/vidio.mp4') }}" type="video/mp4">
+          Browser Anda tidak mendukung tag video.
+        </video>
+      @else
+        <img src="{{ asset('storage/' . $galeri->image) }}" alt="Galeri"
+             class="img-fluid"
+             style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s;">
+      @endif
+    </div>
+  </div>
+@endforeach
       </div>
-      <div class="swiper-button-next custom-nav"></div>
-      <div class="swiper-button-prev custom-nav"></div>
+      <div class="swiper-button-prev custom-nav" style="left: 10px; z-index: 10;"></div>
+      <div class="swiper-button-next custom-nav" style="right: 10px; z-index: 10;"></div>
     </div>
   </div>
 </section>
-
 
 
 <!-- Jam Operasional -->
@@ -126,7 +136,7 @@
 
 <!-- Peta Lokasi -->
 <section class="lokasi" data-aos="fade-up">
-  <div class="overflow-hidden rounded-xl" style="height: 600px;">
+  <div class="overflow-hidden rounded-xl" style="height: 600px;">   
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1335.7281160913742!2d99.06247881566183!3d2.3332667096019355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e055e68f70a19%3A0x2fd966f88a685ae!2sTadaima%20Ramen%20and%20Coffee!5e0!3m2!1sid!2sid!4v1745198210015!5m2!1sid!2sid"
       width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
@@ -152,10 +162,7 @@
     spaceBetween: 30,
     loop: true,
     grabCursor: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -166,6 +173,7 @@
     }
   });
 </script>
+
 
 <style>
   .swiper-slide .card:hover img {

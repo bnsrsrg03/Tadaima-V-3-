@@ -419,7 +419,14 @@ header {
       bottom: 120px; 
     }
   }
-  
+  #scrollToTopBtn i {
+    transition: color 0.3s ease;
+    color: red; 
+}
+
+#scrollToTopBtn:hover i {
+    color: white; 
+}
 
   /*tulisan denah*/
   .typing {
@@ -470,17 +477,23 @@ header {
     50% { border-color: transparent; }
   }
 
-.galeri {
-    background-color: rgba(255, 255, 255, 0.5) !important;  
-  }
-
 
 /*sejarah*/
-  .sejarah-singkat {
-    padding: 80px 20px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  }
+.sejarah-singkat {
+  padding: 80px 24px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                    url('/assets/images/sejarah2.jpg'); /* Gunakan gambar latar sesuai kebutuhan */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Efek paralaks ringan */
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
   
   .container {
     max-width: 1200px;
@@ -505,7 +518,7 @@ header {
   }
   
   .konten-sejarah .gambar {
-    margin-top: 60px; 
+    margin-top: 40px; 
   }
   
   .konten-sejarah .gambar img {
@@ -541,6 +554,11 @@ header {
     }
   }
   
+.galeri {
+  padding-top: 80px;    
+  padding-bottom: 80px;  
+}
+
 /* === Footer === */
 footer {
   background-color: #AA1D1D;
@@ -549,29 +567,34 @@ footer {
 }
 
 .footer-container {
-  width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 40px 0;
+  justify-content: flex-end; 
+  align-items: flex-start; 
+  width: 100%; 
+  padding: 40px;
+  box-sizing: border-box; 
+}
+
+.footer-logo {
+  margin-right: 40px;
 }
 
 .footer-logo img {
   width: 198px;
   height: 185px;
   object-fit: cover;
-  border-radius:50%;
+  border-radius: 50%;
 }
 
 .footer-info, .footer-contact, .footer-sosmed {
-  width: 300px; 
+  width: 300px;
+  margin-left: 20px; 
 }
 
 .footer-info h4,
 .footer-contact h4,
 .footer-sosmed h4 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 18px;
 }
 
@@ -603,13 +626,13 @@ footer {
       flex-direction: column;
       align-items: center;
   }
-  
-  .footer-info, .footer-links, .footer-sosmed {
+
+  .footer-info, .footer-sosmed {
       max-width: 100%;
       text-align: center;
-
   }
 }
+
 
 i, svg {
   font-size: 1rem;

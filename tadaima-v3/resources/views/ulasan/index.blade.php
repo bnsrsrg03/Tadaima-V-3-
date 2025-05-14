@@ -138,7 +138,7 @@
     height: 537px;
     background-color: #A85454;
     color: white;
-    padding: 50px 30px 30px 150px; /* tambahkan padding kiri */
+    padding: 50px 30px 30px 150px; 
     border-radius: 4px;
     box-sizing: border-box;
     z-index: 1;
@@ -184,8 +184,8 @@
 
 
     .desc-section h2 {
-    font-family: Arial, sans-serif; /* Tambahkan font Arial */
-    font-size: 45px; /* Ubah ukuran ke 45px */
+    font-family: Arial, sans-serif; 
+    font-size: 45px; 
     font-weight: bold;
     margin-bottom: 10px;
 }

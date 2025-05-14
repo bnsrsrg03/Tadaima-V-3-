@@ -19,14 +19,25 @@
              alt="{{ $menu->name }}" 
              class="card-img-top" 
              style="height: 300px; width: 100%; object-fit: cover;">
-             
-        <div class="card-body text-center d-flex flex-column justify-content-center" 
-             style="height: 152.06px;">
-            <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
-            <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">
-                Rp{{ number_format($menu->price, 0, ',', '.') }}
-            </p>
-        </div>
+      <div class="card-body text-center d-flex flex-column justify-content-center" 
+     style="height: 152.06px;">
+    <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
+    <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">
+        Rp{{ number_format($menu->price, 0, ',', '.') }}
+    </p>
+
+<a href="https://wa.me/6281396537191?text=Halo%2C%20saya%20ingin%20memesan%20Japanese%20Kare%20Ramen%20dengan%20harga%20Rp36.000"
+   target="_blank"
+   class="btn btn-whatsapp"
+   style="background-color: #800000; color: white; font-weight: 600; border-radius: 8px; padding: 10px 20px; display: inline-flex; align-items: center; gap: 10px;">
+   <i class="fab fa-whatsapp"></i> Pesan Sekarang
+</a>
+
+
+
+
+
+</div>
     </div>
 </div>
 @endforeach
@@ -43,14 +54,31 @@
 </style>
 
 
-    <div class="d-flex justify-content-center mt-4">
-        {{ $menus->links('pagination::bootstrap-5') }}
-    </div> 
-</div>
-
 @include('components.whatsapp-button')
+<button id="scrollToTopBtn"
+  style="display: none;"
+  class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full border-2 border-red-600 text-red-600 bg-white hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300"
+  aria-label="Kembali ke atas">
+  <i class="fas fa-chevron-up text-red-600 hover:text-white transition duration-300" style="font-size: 27px;"></i>
+</button>
+
+
 @endsection
 
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("scrollToTopBtn");
+        window.addEventListener('scroll', () => {
+            btn.style.display = (window.scrollY > 700) ? "flex" : "none";
+        });
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+@endpush
 
 @section('styles')
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

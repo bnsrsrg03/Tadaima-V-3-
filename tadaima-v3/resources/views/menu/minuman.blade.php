@@ -33,14 +33,35 @@
         @endforeach
     </div>
 
-    <div class="d-flex justify-content-center mt-4">
-        {{ $menus->links('pagination::bootstrap-5') }}
-    </div>
-</div>
+
 
 @include('components.whatsapp-button')
 
+@include('components.whatsapp-button')
+<button id="scrollToTopBtn"
+  style="display: none;"
+  class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full border-2 border-red-600 text-red-600 bg-white hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300"
+  aria-label="Kembali ke atas">
+  <i class="fas fa-chevron-up text-red-600 hover:text-white transition duration-300" style="font-size: 27px;"></i>
+</button>
+
+
 @endsection
+
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("scrollToTopBtn");
+        window.addEventListener('scroll', () => {
+            btn.style.display = (window.scrollY > 700) ? "flex" : "none";
+        });
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+@endpush
 
 @section('styles')
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
