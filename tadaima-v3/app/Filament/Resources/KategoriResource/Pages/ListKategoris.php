@@ -14,7 +14,10 @@ class ListKategoris extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('New Kategori'),
+            ->label('Tambah Kategori')
+            ->icon('heroicon-o-plus')
+            ->color('success')
+            ->iconPosition('before'),
         ];
     }
 }

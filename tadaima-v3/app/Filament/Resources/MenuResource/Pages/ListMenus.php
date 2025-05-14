@@ -14,7 +14,12 @@ class ListMenus extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('New Menu'),
+            ->label('Tambah Menu')
+            ->icon('heroicon-o-plus')
+            ->color('success')
+            ->iconPosition('before')
+            ->modalHeading('Tambah Menu')
+            ->modalWidth('lg'),
         ];
     }
 }

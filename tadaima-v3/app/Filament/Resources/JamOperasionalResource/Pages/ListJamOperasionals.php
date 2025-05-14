@@ -14,7 +14,10 @@ class ListJamOperasionals extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('New Jam Operasional'),
+            ->label('Tambah Jam Operasional')
+            ->icon('heroicon-o-plus')
+            ->color('success')
+            ->iconPosition('before'),
         ];
     }
 }

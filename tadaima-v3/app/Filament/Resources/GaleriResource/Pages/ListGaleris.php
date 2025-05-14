@@ -14,7 +14,10 @@ class ListGaleris extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('New Galeri'),
+            ->label('Tambah Galeri')
+            ->icon('heroicon-o-plus')
+            ->color('success')
+            ->iconPosition('before'),
         ];
     }
 }
