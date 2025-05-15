@@ -191,7 +191,7 @@ header {
 
 .hero p {
     position: absolute;
-    top: 58%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 36px;
@@ -278,6 +278,38 @@ header {
 .about .btn:hover {
     background-color: #7e1212;
 }
+@media (max-width: 768px) {
+  .about .container {
+    flex-direction: column;
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .about img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .about .text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about .text h2 {
+    font-size: 28px;
+  }
+
+  .about .text p {
+    font-size: 16px;
+  }
+
+  .about .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
 
 
 
@@ -352,14 +384,14 @@ header {
     background-color: #fff;
   }
   .tim-kami .card-title {
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 0.25rem;
-    color: #333;
+    color: #020202;
   }
   .tim-kami .card-text {
-    font-size: 0.85rem;
-    color: #777;
+    font-size: 16px;
+    color: #000000;
     text-transform: capitalize;
   }
 
@@ -482,11 +514,11 @@ header {
 .sejarah-singkat {
   padding: 80px 24px;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-                    url('/assets/images/sejarah2.jpg'); /* Gunakan gambar latar sesuai kebutuhan */
+                    url('/assets/images/sejarah2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Efek paralaks ringan */
+  background-attachment: fixed; 
   color: #000000;
   font-family: 'Inter', sans-serif;
   border-radius: 16px;
@@ -522,19 +554,20 @@ header {
   }
   
   .konten-sejarah .gambar img {
-    width: 380px;
-    height: 500px;
+    width: 400px;
+    height: 600px;
     object-fit: cover;
     border-radius: 12px;
   }
   
   .konten-sejarah .teks {
     max-width: 900px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Inter', sans-serif;
     line-height: 1.8;
     text-align: justify;
     overflow: visible;
+    font-weight: 500;
   }
   
   
@@ -554,6 +587,34 @@ header {
     }
   }
   
+  .sejarah-singkat .konten-sejarah {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.sejarah-singkat .gambar img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Media query untuk layar kecil (HP) */
+@media (max-width: 768px) {
+  .sejarah-singkat .konten-sejarah {
+    flex-direction: column;
+  }
+  .sejarah-singkat .gambar,
+  .sejarah-singkat .teks {
+    width: 100%;
+  }
+  .sejarah-singkat .gambar {
+    margin-bottom: 15px;
+  }
+}
+
+  
 .galeri {
   padding-top: 80px;    
   padding-bottom: 80px;  
@@ -561,61 +622,78 @@ header {
 
 /* === Footer === */
 footer {
-  background-color: #AA1D1D;
-  color: white;
-  font-family: Arial, sans-serif;
+    background-color: #AA1D1D;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px; 
 }
 
 .footer-container {
-  display: flex;
-  justify-content: flex-end; 
-  align-items: flex-start; 
-  width: 100%; 
-  padding: 40px;
-  box-sizing: border-box; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 40px ;
+    box-sizing: border-box;
 }
 
-.footer-logo {
-  margin-right: 40px;
+.footer-left {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 80px;
+}
+
+.footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+   padding: 40px 30px;
 }
 
 .footer-logo img {
-  width: 198px;
-  height: 185px;
-  object-fit: cover;
-  border-radius: 50%;
+    width: 198px;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
-.footer-info, .footer-contact, .footer-sosmed {
-  width: 300px;
-  margin-left: 20px; 
+.footer-info,
+.footer-contact,
+.footer-sosmed {
+    max-width: 300px;
+    margin-top: 40px; 
 }
 
 .footer-info h4,
 .footer-contact h4,
 .footer-sosmed h4 {
-  margin-bottom: 5px;
-  font-size: 18px;
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
 .footer-info p,
 .footer-contact p,
 .footer-sosmed p {
-  margin: 5px 0;
-  font-size: 14px;
-  line-height: 1.5;
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .footer-contact a,
 .footer-sosmed a {
-  color: white;
-  text-decoration: underline;
+    color: white;
+    text-decoration: underline;
 }
+
 
 .footer-bottom {
   text-align: center;
   font-size: 13px;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px 0;
   border-top: 1px solid #ffffff;
 }

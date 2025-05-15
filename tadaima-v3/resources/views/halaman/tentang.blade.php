@@ -14,14 +14,19 @@
         <img src="/assets/images/sejarah2.jpg" alt="Logo Tadaima">
       </div>
       <div class="teks">
-        <p>
-        Tadaima Ramen and Coffee merupakan salah satu rumah makan yang terletak di Jl. Gereja 3C, Balige, Sumatera Utara yang didirikan pada tahun 2023 dan masih memiliki 1 cabang. Tadaima Ramen and Coffee menawarkan menu makanan dengan khas ramen. Nama 'Tadaima' sendiri diambil dari bahasa Jepang yang berarti “Aku Pulang”, sebuah filosofi orang Jepang yang biasanya diucapkan saat seseorang kembali ke rumah. Dengan filosofi tersebut, Tadaima berharap setiap pengunjung bisa merasakan suasana yang hangat dan akrab seperti di rumah sendiri saat menikmati makanan di sini. 
-        Tadaima Ramen and Coffee menyediakan berbagai pilihan menu seperti ramen, dessert, kopi, ice cream, dan beberapa menu lokal lainnya seperti nasi snack. Tadaima Ramen and Coffee menawarkan pengalaman kuliner yang berbeda bagi para pecinta makanan.
-        </p>
-        <p>
-        Tholhas Tampubolon, pendiri Tadaima Ramen and Coffee melihat perkembangan industri kuliner, pariwisata, dan pembangunan di Balige mulai berkembang pesat. Bapak Tholhas sendiri memiliki ide untuk mendirikan sebuah rumah makan sebagai usaha bisnis kuliner pertamanya di Balige dengan nuansa yang berbeda.
-         Tadaima sendiri bukan menjadi nama pertama.
-        </p>
+       <p>
+    Tadaima Ramen and Coffee adalah sebuah rumah makan bernuansa Jepang yang berdiri di Jl. Gereja No. 3C, Balige, Sumatera Utara. Didirikan pada tahun 2023, Tadaima masih memiliki satu cabang dan menjadi rumah makan yang menghadirkan sajian ramen di kota Balige.
+</p>
+<p>
+    Nama 'Tadaima' sendiri diambil dari bahasa Jepang yang berarti “Aku Pulang”, sebuah filosofi orang Jepang yang biasanya diucapkan saat seseorang kembali ke rumah. Dengan filosofi tersebut, Tadaima berharap setiap pengunjung bisa merasakan suasana yang hangat dan akrab seperti di rumah sendiri saat menikmati makanan di sini. Tadaima Ramen and Coffee menyediakan berbagai pilihan menu seperti ramen, dessert, kopi, es krim, dan beberapa menu lokal lainnya seperti nasi dan snack.
+</p>
+<p>
+    Tholhas Tampubolon, selaku pendiri Tadaima Ramen and Coffee, melihat bahwa Balige memiliki potensi besar dalam bidang kuliner. Meski masih tergolong daerah berkembang, minat masyarakat terhadap kuliner modern terus meningkat. Dari situlah muncul ide untuk mendirikan rumah makan dengan konsep yang berbeda, menggabungkan cita rasa Jepang dengan suasana lokal yang ramah dan nyaman.
+</p>
+<p>
+    Dengan desain interior yang hangat dan suasana yang tenang, Tadaima menjadi tempat yang cocok untuk berkumpul, bersantai, atau sekadar menikmati semangkuk ramen hangat. Kehadiran Tadaima diharapkan tidak hanya menjadi pilihan kuliner baru, tetapi juga menjadi bagian dari gaya hidup masyarakat Balige yang semakin terbuka terhadap budaya dan pengalaman baru.
+</p>
+
       </div>
     </div>
   </div>
@@ -32,41 +37,44 @@
 
 
 <!-- karyawan -->
-<section class="tim-kami overflow-hidden py-10">
+<section class="tim-kami overflow-hidden">
   <div class="container mx-auto">
-    <h2 style="font-size: 40px;" class="text-center font-bold mb-10 text-black drop-shadow-lg">
+    <h2 class="text-center font-bold mb-10 text-black drop-shadow-lg">
       Profil Karyawan
     </h2>
     <div class="overflow-hidden relative w-full">
-  <div class="flex animate-scroll gap-4 w-max">
-    @foreach ($karyawans as $karyawan)
-      <div class="flex flex-col items-center flex-shrink-0 w-[310px]">
-        <div class="overflow-hidden">
-          <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
-               alt="{{ $karyawan->name }}" class="img-karyawan">
-        </div>
-        <p class="mt-2 text-[20px] text-center text-black font-medium truncate w-full">
-          {{ $karyawan->name }}
-        </p>
-        <p class="text-center text-gray-600 text-sm truncate w-full">{{ $karyawan->position }}</p>
-      </div>
-    @endforeach
+      <div class="flex animate-scroll gap-4 w-max">
+        @foreach ($karyawans as $karyawan)
+          <div class="flex flex-col items-center flex-shrink-0">
+            <div class="overflow-hidden">
+              <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
+                   alt="{{ $karyawan->name }}" class="img-karyawan">
+            </div>
+            <p class="mt-2 text-center text-black font-medium truncate w-full card-title">
+              {{ $karyawan->name }}
+            </p>
+            <p class="text-center text-gray-600 truncate w-full card-text">
+              {{ $karyawan->position }}
+            </p>
+          </div>
+        @endforeach
 
-    @foreach ($karyawans as $karyawan)
-      <div class="flex flex-col items-center flex-shrink-0 w-[310px]">
-        <div class="overflow-hidden">
-          <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
-               alt="{{ $karyawan->name }}" class="img-karyawan">
-        </div>
-        <p class="mt-2 text-xs text-center text-black font-medium truncate w-full">
-          {{ $karyawan->name }}
-        </p>
-        <p class="text-center text-gray-600 text-sm truncate w-full"> {{ $karyawan->position }}</p>
+        @foreach ($karyawans as $karyawan)
+          <div class="flex flex-col items-center flex-shrink-0">
+            <div class="overflow-hidden">
+              <img src="{{ asset('storage/' . ($karyawan->image ?? 'images/default.jpg')) }}"
+                   alt="{{ $karyawan->name }}" class="img-karyawan">
+            </div>
+            <p class="mt-2 text-center text-black font-medium truncate w-full card-title">
+              {{ $karyawan->name }}
+            </p>
+            <p class="text-center text-gray-600 truncate w-full card-text">
+              {{ $karyawan->position }}
+            </p>
+          </div>
+        @endforeach
       </div>
-    @endforeach
-  </div>
-</div>
-</div>
+    </div>
   </div>
 </section>
 
@@ -77,10 +85,10 @@
 }
 .animate-scroll {
   animation: scroll 25s linear infinite;
-  width: max-content;
   display: flex;
 }
 </style>
+
 
 
 
@@ -100,7 +108,7 @@
       @if ($index === 0)
         <video autoplay muted loop
                style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s;">
-          <source src="{{ asset('assets/images/vidio.mp4') }}" type="video/mp4">
+          <source src="{{ asset('assets/images/vidio1.mp4') }}" type="video/mp4">
           Browser Anda tidak mendukung tag video.
         </video>
       @else
@@ -136,13 +144,19 @@
 
 <!-- Peta Lokasi -->
 <section class="lokasi" data-aos="fade-up">
-  <div class="overflow-hidden rounded-xl" style="height: 600px;">   
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1335.7281160913742!2d99.06247881566183!3d2.3332667096019355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e055e68f70a19%3A0x2fd966f88a685ae!2sTadaima%20Ramen%20and%20Coffee!5e0!3m2!1sid!2sid!4v1745198210015!5m2!1sid!2sid"
-      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+  <div class="overflow-hidden rounded-xl" style="height: 600px;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15943.982830402778!2d99.0586125!3d2.3333355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e055e68f70a19%3A0x2fd966f88a685ae!2sTadaima%20Ramen%20and%20Coffee!5e0!3m2!1sid!2sid!4v1715765589627!5m2!1sid!2sid" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 </section>
+
 
 @include('components.whatsapp-button')
 

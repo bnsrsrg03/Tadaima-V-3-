@@ -33,30 +33,43 @@
 
 {{-- Denah  --}}
 <div class="position-relative text-white" data-aos="fade-up" data-aos-duration="1000">
-    {{-- Background besar --}}
+
     <div class="position-relative"
          style="height: 710px; background-image: url('{{ asset('assets/images/sejarah.JPG') }}'); background-size: cover; background-position: center;">
-         
-        {{-- Overlay gelap transparan --}}
+
         <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.8);"></div>
 
-        {{-- Teks di atas background --}}
         <div class="position-absolute top-50 start-0 translate-middle-y ps-4">
-            
-        <h4 class="typing">Pesan Meja Anda &amp; Nikmati Layanan Terbaik!</h4>
+
+            <div>
+                <h4 class="typing">Pesan Meja Anda &amp; Nikmati Layanan Terbaik!</h4>
+            </div>
+
+     <div class="mt-3">
+    <a href="https://wa.me/6281396537191?text=Halo%2C%20saya%20ingin%20memesan%20tempat."
+       target="_blank"
+       class="btn btn-whatsapp"
+       style="background-color: #800000; color: white; font-weight: 600; border-radius: 8px; padding: 10px 20px; display: inline-flex; align-items: center; gap: 10px;">
+       <i class="fab fa-whatsapp"></i> Pesan Sekarang
+    </a>
+</div>
+
 
         </div>
-    </div>
-    {{-- Gambar kecil (thumbnail) --}}
-    <div class="position-absolute bottom-0 end-0 p-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"> 
-    <div class="custom-frame border border-light shadow-lg" style="width: 650px; position: relative;">
-        <img src="{{ asset('assets/images/denah.jpg') }}" class="img-fluid" alt="Thumbnail">
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
-        <div class="corner bottom-left"></div>
-        <div class="corner bottom-right"></div>
+
+        <div class="position-absolute bottom-0 end-0 p-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"> 
+            <div class="custom-frame border border-light shadow-lg" style="width: 650px; position: relative;">
+                <img src="{{ asset('assets/images/denah.jpg') }}" class="img-fluid" alt="Thumbnail">
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+            </div>
+        </div>
+
     </div>
 </div>
+
 
 <style>
 .custom-frame {
@@ -97,6 +110,68 @@
     right: 0;
     border-left: none;
     border-top: none;
+}
+
+/* Tambahkan ini di bawah style existing */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .about .text {
+        width: 100%;
+    }
+
+    .custom-frame {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .custom-frame img {
+        width: 100%;
+        height: auto;
+    }
+
+    .position-absolute.bottom-0.end-0.p-4 {
+        position: static !important;
+        margin-top: 20px;
+    }
+
+    .position-absolute.top-50.start-0.translate-middle-y.ps-4 {
+        position: static !important;
+        transform: none !important;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .typing {
+        font-size: 20px;
+    }
+
+    .btn-whatsapp {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .corner {
+        width: 25px;
+        height: 25px;
+        border-width: 2px;
+    }
+
+    #scrollToTopBtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    #scrollToTopBtn i {
+        font-size: 20px;
+    }
+
 }
 </style>
 

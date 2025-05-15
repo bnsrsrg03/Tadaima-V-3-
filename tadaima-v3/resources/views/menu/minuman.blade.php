@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
+<div class="container py-7 ps-lg-5 ps-md-4">
     <h2 class="text-center mb-5" style="font-size: 2.8rem; font-weight: bold;">Minuman</h2>
 
     <div class="row justify-content-center">
@@ -26,6 +26,19 @@
             <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">
                 Rp{{ number_format($menu->price, 0, ',', '.') }}
             </p>
+               @php
+                            $nomor = '6281396537191';
+                            $nama = $menu->name;
+                            $harga = 'Rp' . number_format($menu->price, 0, ',', '.');
+                            $pesan = urlencode("Halo, saya ingin memesan $nama dengan harga $harga");
+                        @endphp
+
+                        <a href="https://wa.me/{{ $nomor }}?text={{ $pesan }}"
+                           target="_blank"
+                           class="btn btn-whatsapp"
+                           style="background-color: #800000; color: white; font-weight: 600; border-radius: 8px; padding: 10px 20px; display: flex; justify-content: center; align-items: center; width: 100%; margin-top: auto;">
+                           <i class="fab fa-whatsapp me-2"></i> Pesan Sekarang
+                        </a>
         </div>
     </div>
 </div>

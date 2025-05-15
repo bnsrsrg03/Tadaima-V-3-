@@ -1,47 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
+<div class="container py-7 ps-lg-5 ps-md-4">
     <h2 class="text-center mb-5" style="font-size: 2.8rem; font-weight: bold;">Makanan</h2>
 
     <div class="row justify-content-center">
-    @foreach ($menus as $menu)
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-5" data-aos="fade-up">
-    <div class="card shadow-lg position-relative card-hover" 
-         style="width: 357px; height: 452.06px; border-radius: 20px; overflow: hidden;">
-         
-        {{-- Kalau bestseller, tampilkan label best seller --}}
-        @if ($menu->bestseller)
-            <img src="{{ asset('assets/images/bestseller.png') }}" alt="Best Seller" class="best-seller-badge">
-        @endif
+        @foreach ($menus as $menu)
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-5" data-aos="fade-up">
+                <div class="card shadow-lg position-relative card-hover" 
+                     style="width: 357px; height: 451px; border-radius: 20px; overflow: hidden;">
+                     
+                    {{-- Kalau bestseller, tampilkan label best seller --}}
+                    @if ($menu->bestseller)
+                        <img src="{{ asset('assets/images/bestseller.png') }}" alt="Best Seller" class="best-seller-badge">
+                    @endif
 
-        <img src="{{ asset('storage/' . $menu->image) }}" 
-             alt="{{ $menu->name }}" 
-             class="card-img-top" 
-             style="height: 300px; width: 100%; object-fit: cover;">
-      <div class="card-body text-center d-flex flex-column justify-content-center" 
-     style="height: 152.06px;">
-    <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
-    <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">
-        Rp{{ number_format($menu->price, 0, ',', '.') }}
-    </p>
+                    <img src="{{ asset('storage/' . $menu->image) }}" 
+                         alt="{{ $menu->name }}" 
+                         class="card-img-top" 
+                         style="height: 300px; width: 100%; object-fit: cover;">
 
-<a href="https://wa.me/6281396537191?text=Halo%2C%20saya%20ingin%20memesan%20Japanese%20Kare%20Ramen%20dengan%20harga%20Rp36.000"
-   target="_blank"
-   class="btn btn-whatsapp"
-   style="background-color: #800000; color: white; font-weight: 600; border-radius: 8px; padding: 10px 20px; display: inline-flex; align-items: center; gap: 10px;">
-   <i class="fab fa-whatsapp"></i> Pesan Sekarang
-</a>
+                    <div class="card-body text-center d-flex flex-column justify-content-center" 
+                         style="height: 152.06px;">
+                        <h4 class="card-title mb-3" style="font-weight: 700;">{{ $menu->name }}</h4>
+                        <p class="card-text text-muted mb-4" style="font-size: 1.3rem;">
+                            Rp{{ number_format($menu->price, 0, ',', '.') }}
+                        </p>
 
+                        @php
+                            $nomor = '6281396537191';
+                            $nama = $menu->name;
+                            $harga = 'Rp' . number_format($menu->price, 0, ',', '.');
+                            $pesan = urlencode("Halo, saya ingin memesan $nama dengan harga $harga");
+                        @endphp
 
-
-
-
-</div>
+                        <a href="https://wa.me/{{ $nomor }}?text={{ $pesan }}"
+                           target="_blank"
+                           class="btn btn-whatsapp"
+                           style="background-color: #800000; color: white; font-weight: 600; border-radius: 8px; padding: 10px 20px; display: flex; justify-content: center; align-items: center; width: 100%; margin-top: auto;">
+                           <i class="fab fa-whatsapp me-2"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </div>
-@endforeach
-</div>
+
 
 <style>
 .card-hover {

@@ -29,7 +29,7 @@ class JamOperasionalResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('Hari')
+                Select::make('day')
                         ->options([
                             'senin' => 'Senin',
                             'selasa' => 'Selasa',
@@ -66,7 +66,7 @@ class JamOperasionalResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('day')
-                ->label('Hari')
+                ->label('day')
                 ->searchable(),
 
                 Tables\Columns\TextColumn::make('open_time')
