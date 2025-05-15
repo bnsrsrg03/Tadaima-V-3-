@@ -300,6 +300,72 @@
     color: white;
 }
 
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 28px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .ulasan-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 15px;
+        height: auto;
+    }
+
+    .form-section {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .desc-section {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding: 30px 20px;
+        height: auto;
+        text-align: left;
+    }
+
+    .desc-section h2 {
+        font-size: 32px;
+    }
+
+    .desc-section p {
+        font-size: 18px;
+    }
+
+    .ulasan-list {
+        padding: 0 15px;
+    }
+
+    .ulasan-content {
+        padding: 20px 15px;
+        margin-top: 0;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .form-section button {
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-right: 20px;
+        font-size: 28px;
+        margin-top: 10px;
+    }
+}
+
+
 </style>
 @include('components.whatsapp-button')
 @endsection

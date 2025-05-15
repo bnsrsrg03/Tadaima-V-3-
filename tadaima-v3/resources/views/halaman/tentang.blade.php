@@ -128,13 +128,70 @@
 
 
 <!-- Jam Operasional -->
+@php
+  use Carbon\Carbon;
+
+  // Buat array kosong untuk menampung hasil grouping
+  $grouped = [];
+
+  foreach ($jamOperasional as $jam) {
+    $open = Carbon::parse($jam->open_time)->format('H:i');
+    $close = Carbon::parse($jam->close_time)->format('H:i');
+    $key = $open . ' - ' . $close;
+    $grouped[$key][] = $jam->day;
+  }
+
+  // Fungsi bantu untuk menyatukan hari berturut-turut
+  function formatHari($days) {
+    $mapHari = ['senin','selasa','rabu','kamis','jumat','sabtu','minggu'];
+    $days = array_map('strtolower', $days);
+    $index = array_flip($mapHari);
+    sort($days);
+
+    $days = array_unique($days);
+    usort($days, function($a, $b) use ($index) {
+        return $index[$a] <=> $index[$b];
+    });
+
+    $ranges = [];
+    $temp = [];
+
+    foreach ($days as $i => $day) {
+      if (empty($temp)) {
+        $temp[] = $day;
+      } else {
+        $prev = end($temp);
+        if ($index[$day] == $index[$prev] + 1) {
+          $temp[] = $day;
+        } else {
+          $ranges[] = $temp;
+          $temp = [$day];
+        }
+      }
+    }
+    if (!empty($temp)) {
+      $ranges[] = $temp;
+    }
+
+    $result = [];
+    foreach ($ranges as $range) {
+      if (count($range) > 1) {
+        $result[] = ucfirst($range[0]) . ' - ' . ucfirst(end($range));
+      } else {
+        $result[] = ucfirst($range[0]);
+      }
+    }
+
+    return implode(', ', $result);
+  }
+@endphp
+
 <section class="jam-operasional" style="background-color: #b30000; padding: 20px 0;">
   <div class="container text-center">
     <h4 class="text-white font-bold mb-1">Jam Operasional</h4>
     <p class="text-white mb-0">
-      @foreach ($jamOperasional as $jam)
-        {{ $jam->day }} : {{ \Carbon\Carbon::parse($jam->open_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($jam->close_time)->format('H:i') }}
-        @if (!$loop->last)<br>@endif
+      @foreach ($grouped as $time => $days)
+        {{ formatHari($days) }} : {{ $time }}<br>
       @endforeach
     </p>
   </div>
